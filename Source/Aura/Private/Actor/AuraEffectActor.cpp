@@ -73,6 +73,7 @@ void AAuraEffectActor::OnEndOverlap(AActor* TargetActor)
 		UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor);
 		if (!IsValid(TargetASC)) return;
 
+		// RemoveActiveGameplayEffectBySourceEffect is more efficient.
 		TargetASC->RemoveActiveGameplayEffectBySourceEffect(InfiniteGameplayEffectClass, TargetASC, 1);
 		/*
 		TArray<FActiveGameplayEffectHandle> HandlesToRemove;
