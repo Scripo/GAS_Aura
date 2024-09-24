@@ -36,6 +36,9 @@ protected:
 	UPROPERTY(BlueprintAssignable, Category = "GAS|Attributes")
 	FOnPlayerStatChangedSignature AttributePointsChangedDelegate;
 
+	UFUNCTION(BlueprintCallable)
+	void UpgradeAttribute(const FGameplayTag& AttributeTag);
+
 private:
 
 	void BroadcastAttributeInfo(const FGameplayTag& AttributeTag, const FGameplayAttribute& Attribute) const;
