@@ -2,7 +2,7 @@
 
 
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
-//#include "AuraGameplayTags.h"
+#include "AuraGameplayTags.h"
 #include "AbilitySystem/Abilities/AuraGameplayAbility.h"
 #include "Aura/AuraLogChannels.h"
 #include "Interaction/PlayerInterface.h"
@@ -21,6 +21,7 @@ void UAuraAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclassOf
 		if (const UAuraGameplayAbility* AuraAbility = Cast<UAuraGameplayAbility>(AbilitySpec.Ability))
 		{
 			AbilitySpec.DynamicAbilityTags.AddTag(AuraAbility->StartupInputTag);
+			AbilitySpec.DynamicAbilityTags.AddTag(FAuraGameplayTags::Get().Abilities_Status_Equipped);
 			GiveAbility(AbilitySpec);
 		}
 	}
