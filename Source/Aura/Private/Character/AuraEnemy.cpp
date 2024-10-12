@@ -147,6 +147,8 @@ void AAuraEnemy::InitAbilityActorInfo()
 	{
 		InitializeDefaultAttributes();
 	}
+
+	OnAscRegistered.Broadcast(MyAbilitySystemComponent);
 }
 
 void AAuraEnemy::InitializeDefaultAttributes() const
