@@ -153,6 +153,11 @@ FOnASCRegistered AAuraCharacterBase::GetOnASCRegisteredDelegate()
 	return OnAscRegistered;
 }
 
+USkeletalMeshComponent* AAuraCharacterBase::GetWeapon_Implementation()
+{
+	return Weapon;
+}
+
 //FOnDeath* AAuraCharacterBase::GetOnDeathDelegate()
 //{
 //	return &OnDeath;
